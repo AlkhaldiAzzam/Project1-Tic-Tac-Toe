@@ -20,7 +20,7 @@ display: flex;
 justify-content: center;    
 height: 800px;
 align-items: center;
-
+flex-direction: column;
 background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjFNeaMVZwsDM2PgvKnCRwexbc0h_FJ6dM9Idhlto4bVnX918e')
 
 }
@@ -38,4 +38,21 @@ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjF
 
     /* background-color: slategrey; */
 
+}
+
+.scores{
+    display: flex;
+    width: 100%;
+height: 100px;
+justify-content: space-around;
+color: aliceblue;
+
+
+}
+
+
+#reset{
+
+background-color: linear-gradient(135deg, #6e8efb, #a777e3);
+    
 }

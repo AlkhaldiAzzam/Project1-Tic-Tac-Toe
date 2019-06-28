@@ -3,61 +3,50 @@ let board = [ ['','',''],
               ['','',''],  
               ['','',''] ];
 
+            
 //false is X and true is O
 let turn = false;
 //state of the game
 let ended = false;
 const block = document.querySelectorAll('.column');
 
-const winner = document.createElement('h2');
+let totalScore = 0;
 
+let xScore = 0 , oScore = 0;
 
 const checkWinner = function(){
-function xHasWon(){  winner.innerText = "Player X has WON!";
-document.body.appendChild(winner);
+
+
+function xHasWon(){  alert('Player X has WON!');
 ended = true;
-console.log('x');
+xScore++;
+document.querySelector('#X').innerText = "Player X's Score: " + xScore;
 }
 
 
-function oHasWon(){  winner.innerText = "Player O has WON!";
-document.body.appendChild(winner);
+function oHasWon(){ alert("Player O has WON!");
 ended = true;
 
-console.log('o')}
+oScore++;
+document.querySelector('#O').innerText = "Player O's Score: " + oScore;
+
+}
 
 for (let i = 0; i<3; i++){
-if (board[i][0] == board[i][1] == board[i][2] ){
-    if(turn ==false)
-    xHasWon();
-    else
-    oHasWon();}      
 
-    if(board[0][i] == board[1][i] == board[2][i] ){
-        if (turn == flase)
-        xHasWon();
-        else 
-        oHasWon();
-
-    }
-
+(board[i][0] === board[i][1] && board[i][0] == board[i][2] && board[i][0] != '' )? (turn ==false ? xHasWon() : oHasWon()) : '';
     
-    if(board[0][0] == board[1][1] == board[2][2]) {
-        if (turn == false)
-        xHasWon();
-        else 
-        oHasWon();
-    }
-
-if (board[0][2] == board[1][1] == board[2][0]){
-    if (turn == false)
-    xHasWon();
-    else 
-    oHasWon();
+(board[0][i] === board[1][i] && board[0][i] == board[2][i] && board[0][i] != '' ) ? (turn ==false ? xHasWon() : oHasWon()) : '';
 
 }
+(board[0][0] === board[1][1] && board[0][0] == board[2][2] && board[0][0] != '' )? (turn == false ? xHasWon() : oHasWon()) : '';
 
+(board[0][2] === board[1][1] && board[0][2] == board[2][0] && board[0][2] != '' )? (turn == false ? xHasWon() : oHasWon() ): '';
 console.log(ended);
+
+console.log(xScore);
+
+console.log(oScore);
 
 }
 
@@ -85,11 +74,17 @@ let id = this.id;
 
         board[ind1][ind2] = 'O';
     }
-
+    checkWinner();
+    totalScore++;
 turn = !turn;
 this.removeEventListener('click' , tic);
 
-checkWinner();
+if (totalScore == 9){
+alert('its a draw');
+ended = true;
+
+}
+
 
 if (ended == true)
     block.forEach(element => {
@@ -120,8 +115,14 @@ block.forEach(element => {
 
 
 });
-
-
+board = [ ['','',''],
+              ['','',''],  
+              ['','',''] ];
+ended = false;
+turn = false;
+totalScore = 0;
 }
+
+document.querySelector('#reset').addEventListener('click' , makeBoard);
 
 makeBoard();
