@@ -1,0 +1,41 @@
+.row{ 
+width: 300px;
+height: 100px;
+border-bottom: 2px solid yellow;
+display: flex;
+
+
+justify-content: center;
+
+}
+
+.column{
+    width : 100px;
+    text-align: center;
+    color: red;
+
+}
+.main{
+display: flex;
+justify-content: center;    
+height: 800px;
+align-items: center;
+
+background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjFNeaMVZwsDM2PgvKnCRwexbc0h_FJ6dM9Idhlto4bVnX918e')
+
+}
+
+#bord{
+    border-right: 2px solid yellow;
+    border-left: 2px solid yellow;
+}
+
+#last{
+    border : none;
+}
+
+.mainSection{
+
+    /* background-color: slategrey; */
+
+}
