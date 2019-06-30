@@ -2,7 +2,6 @@
 let board = [ ['','',''],
               ['','',''],  
               ['','',''] ];
-
             
 //false is X and true is O
 let turn = false;
@@ -14,22 +13,24 @@ let totalScore = 0;
 
 let xScore = 0 , oScore = 0;
 
+let winner;
 const checkWinner = function(){
 
 
-function xHasWon(){  alert('Player X has WON!');
+function xHasWon(){  alert('Player X WON!');
 ended = true;
 xScore++;
 document.querySelector('#X').innerText = "Player X's Score: " + xScore;
+winner = 'x';
 }
 
 
-function oHasWon(){ alert("Player O has WON!");
+function oHasWon(){ alert("Player O WON!");
 ended = true;
 
 oScore++;
 document.querySelector('#O').innerText = "Player O's Score: " + oScore;
-
+winner = 'o';
 }
 
 for (let i = 0; i<3; i++){
@@ -42,11 +43,7 @@ for (let i = 0; i<3; i++){
 (board[0][0] === board[1][1] && board[0][0] == board[2][2] && board[0][0] != '' )? (turn == false ? xHasWon() : oHasWon()) : '';
 
 (board[0][2] === board[1][1] && board[0][2] == board[2][0] && board[0][2] != '' )? (turn == false ? xHasWon() : oHasWon() ): '';
-console.log(ended);
 
-console.log(xScore);
-
-console.log(oScore);
 
 }
 
@@ -55,7 +52,6 @@ const tic = function(){
 let id = this.id;
 
     const idArr = id.split(',');
-    console.log(idArr);
 
     const ind1 = parseInt(idArr[0] , 10);
 
@@ -79,7 +75,7 @@ let id = this.id;
 turn = !turn;
 this.removeEventListener('click' , tic);
 
-if (totalScore == 9){
+if (totalScore == 9 && winner == ''){
 alert('its a draw');
 ended = true;
 
@@ -106,7 +102,7 @@ if (ended == true)
 const makeBoard = function(){
 
 block.forEach(element => {
-    element.innerHTML = '<h1>#</h1>'
+    element.innerHTML = '<h1></h1>'
 });
 
 
@@ -121,6 +117,7 @@ board = [ ['','',''],
 ended = false;
 turn = false;
 totalScore = 0;
+winner = '';
 }
 
 document.querySelector('#reset').addEventListener('click' , makeBoard);

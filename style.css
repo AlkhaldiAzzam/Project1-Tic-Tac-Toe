@@ -25,7 +25,7 @@ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjF
 
 }
 
-#bord{
+.box{
     border-right: 2px solid yellow;
     border-left: 2px solid yellow;
 }
@@ -52,7 +52,9 @@ color: aliceblue;
 
 
 #reset{
-
-background-color: linear-gradient(135deg, #6e8efb, #a777e3);
-    
+height: 25px;
+width: 100px;
+margin:  50px;
+font-weight: 800;
+background-color: orange;
 }
