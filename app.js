@@ -59,14 +59,14 @@ let id = this.id;
 
 
     if (turn == false){ 
-        this.innerHTML = '<h1>X</h1>';
+        this.innerHTML = '<img src= "images/x.svg" class="game">';
 
         board[ind1][ind2] = 'X';
 
     }
     else{
 
-        this.innerHTML = '<h1>O</h1>';
+        this.innerHTML = '<img src= "images/o.png" class="game">';
 
         board[ind1][ind2] = 'O';
     }
