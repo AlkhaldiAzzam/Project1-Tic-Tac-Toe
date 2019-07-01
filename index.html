@@ -8,8 +8,11 @@
     <title>Tic Tac Toe Game</title>
 </head>
 <body>
+   
         <div class="main">
-
+ <div>
+        <img src="images/Star_Wars_Yellow_Logo.svg.png" alt="" style="width: 600px; height: 200px">
+    </div>
             <div class="scores">
 
                 <h1 id="X">Player X's Score: 0</h1>
@@ -21,19 +24,19 @@
                 
                 <div class="row">
                     <div class="column" id = '0,0'> <h1></h1> </div>
-                    <div class="column box" id = '0,1'><h1></h1></div>
+                    <div class="column" id = '0,1'><h1></h1></div>
                     <div class="column" id = '0,2'><h1></h1></div>
                 </div>
                 <div class="row"> 
                     
                     <div class="column" id = '1,0'><h1></h1></div>
-                    <div class="column box" id = '1,1'><h1></h1></div>
+                    <div class="column" id = '1,1'><h1></h1></div>
                     <div class="column" id = '1,2'><h1></h1></div>
                     
                 </div>
                 <div class="row" id="last">
                     <div class="column" id = '2,0'><h1></h1></div>
-                    <div class="column box" id = '2,1'><h1></h1></div>
+                    <div class="column" id = '2,1'><h1></h1></div>
                     <div class="column" id = '2,2'><h1></h1></div>
                     
                 </div>
@@ -41,10 +44,11 @@
                 
                 
             </div>
+            <div style="display: flex">
+            <button id="reset">Start Another Round</button>
             
-            <button id="reset">Reset Game</button>
-            
-            
+            <button id="restartButton"> <a href="icons.html" style="color: black;text-decoration: none;">Restart Game</a> </button> 
+            </div>
         </div>
         
 

@@ -8,15 +8,23 @@ let turn = false;
 //state of the game
 let ended = false;
 
-let xIcon, oIcon;
 
 
+
+let xIcon = window.localStorage.getItem('x'), oIcon = window.localStorage.getItem('o');
+
+
+const hit = new Audio('sounds/LSwall01.mp3');
 
 
 
 const block = document.querySelectorAll('.column');
 
 let totalScore = 0;
+
+window.localStorage.setItem('xScore' , 0);
+
+window.localStorage.setItem('oScore' , 0);
 
 let xScore = 0 , oScore = 0;
 
@@ -69,7 +77,7 @@ let id = this.id;
         this.innerHTML = `<img src= "${xIcon}" class="game">`;
 
         board[ind1][ind2] = 'X';
-
+        
     }
     else{
 
@@ -77,6 +85,7 @@ let id = this.id;
 
         board[ind1][ind2] = 'O';
     }
+    hit.play();
     checkWinner();
     totalScore++;
 turn = !turn;
@@ -118,7 +127,7 @@ block.forEach(element => {
 
 
 });
-board = [ ['','',''],
+board = [     ['','',''],
               ['','',''],  
               ['','',''] ];
 ended = false;

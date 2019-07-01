@@ -3,7 +3,7 @@ const iconsO = document.querySelectorAll('.o');
 
 const chooseIconO = function(){
 
-    oIcon = this.getAttribute('src');
+    window.localStorage.setItem('o' ,this.getAttribute('src'));
     console.log(oIcon);
 }
 
@@ -17,7 +17,8 @@ const iconsX = document.querySelectorAll('.x');
 
 const chooseIconX = function(){
 
-    xIcon = this.getAttribute('src');
+    window.localStorage.setItem('x' ,this.getAttribute('src'));
+    
     console.log(xIcon);
 }
 
