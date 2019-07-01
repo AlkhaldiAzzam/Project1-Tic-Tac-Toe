@@ -7,6 +7,13 @@ let board = [ ['','',''],
 let turn = false;
 //state of the game
 let ended = false;
+
+let xIcon, oIcon;
+
+
+
+
+
 const block = document.querySelectorAll('.column');
 
 let totalScore = 0;
@@ -59,14 +66,14 @@ let id = this.id;
 
 
     if (turn == false){ 
-        this.innerHTML = '<img src= "images/x.svg" class="game">';
+        this.innerHTML = `<img src= "${xIcon}" class="game">`;
 
         board[ind1][ind2] = 'X';
 
     }
     else{
 
-        this.innerHTML = '<img src= "images/o.png" class="game">';
+        this.innerHTML = `<img src= "${oIcon}" class="game">`;
 
         board[ind1][ind2] = 'O';
     }
