@@ -17,7 +17,7 @@ a{
     -webkit-text-stroke-color: #ffe81f;
 }
 
-h1{
+h1,h2{
     font-family: 'StarJedi', arial;
     -webkit-text-fill-color: black;
     -webkit-text-stroke-width: 1px;
@@ -57,6 +57,7 @@ justify-content: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(153, 153, 153, 0.2);
 
 }
 .main{
@@ -175,3 +176,40 @@ height: 400px;
     align-items: center;
 
 }
+
+.oIco:hover{
+
+border-radius: 50%;
+box-shadow: 0 0 40px 10px red;
+
+
+}
+
+
+.xIco:hover{
+
+    border : 2px solid blue;
+    border-radius: 30px;
+    box-shadow: 0 0 40px 10px blue;
+    
+    
+    }
+
+
+    .xChosen{
+
+        border : 2px solid blue;
+        border-radius: 30px;
+        box-shadow: 0 0 40px 10px blue;
+        
+        
+        }
+
+
+        .oChosen{
+
+            border-radius: 50%;
+            box-shadow: 0 0 40px 10px red;
+            
+            
+            }

@@ -5,6 +5,12 @@ const chooseIconO = function(){
 
     window.localStorage.setItem('o' ,this.getAttribute('src'));
     console.log(oIcon);
+    iconsO.forEach(element => {
+        element.className = 'o';
+    });
+
+
+    this.className += ' oChosen';
 }
 
 iconsO.forEach(element => {
@@ -18,7 +24,12 @@ const iconsX = document.querySelectorAll('.x');
 const chooseIconX = function(){
 
     window.localStorage.setItem('x' ,this.getAttribute('src'));
-    
+    iconsX.forEach(element => {
+        element.className = 'x';
+    });
+    this.className += ' xChosen';
+
+
     console.log(xIcon);
 }
 

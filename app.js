@@ -32,7 +32,8 @@ let winner;
 const checkWinner = function(){
 
 
-function xHasWon(){  alert('Player X WON!');
+function xHasWon(){  
+document.querySelector('#winner').innerText = 'Player X WON!';
 ended = true;
 xScore++;
 document.querySelector('#X').innerText = "Player X's Score: " + xScore;
@@ -40,8 +41,11 @@ winner = 'x';
 }
 
 
-function oHasWon(){ alert("Player O WON!");
-ended = true;
+function oHasWon(){ 
+
+    document.querySelector('#winner').innerText = 'Player O WON!';
+    
+    ended = true;
 
 oScore++;
 document.querySelector('#O').innerText = "Player O's Score: " + oScore;
@@ -134,6 +138,8 @@ ended = false;
 turn = false;
 totalScore = 0;
 winner = '';
+
+document.querySelector('#winner').innerText = '';
 }
 
 document.querySelector('#reset').addEventListener('click' , makeBoard);
