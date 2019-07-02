@@ -1,56 +1,52 @@
-
-  @font-face {
+@font-face {
     font-family: "StarJedi";
     src: url("./fonts/pixel-sagas_sigma-five/Sigma Five Italic.otf");
 }
-button{
+
+button {
     font-family: 'StarJedi', arial;
     -webkit-text-fill-color: black;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #ffe81f;
     font-weight: 800;
 }
-a{
+
+a {
     font-family: 'StarJedi', arial;
     -webkit-text-fill-color: black;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #ffe81f;
 }
 
-h1,h2{
+h1,
+h2 {
     font-family: 'StarJedi', arial;
     -webkit-text-fill-color: black;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #ffe81f;
 }
 
-
-button{
-border-color: orange;
-border-radius: 7px;
-background-color: orange;
-
+button {
+    border-color: orange;
+    border-radius: 7px;
+    background-color: orange;
 }
 
-body{
+body {
     background-image: url("../images/starwars_back.jpg");
     background-position: center;
     background-size: cover;
 }
 
-.row{ 
-width: 300px;
-height: 100px;
-/* border-bottom: 8px solid #b32400; */
-display: flex;
-
-
-
-justify-content: center;
-
+.row {
+    width: 300px;
+    height: 100px;
+    /* border-bottom: 8px solid #b32400; */
+    display: flex;
+    justify-content: center;
 }
 
-.column{
+.column {
     width: 95px;
     text-align: center;
     color: red;
@@ -58,113 +54,95 @@ justify-content: center;
     align-items: center;
     justify-content: center;
     background-color: rgba(153, 153, 153, 0.2);
-
-}
-.main{
-display: flex;
-justify-content: center;    
-height: 800px;
-align-items: center;
-flex-direction: column;
-
 }
 
-
-#last{
-    border : none;
+.main {
+    display: flex;
+    justify-content: center;
+    height: 800px;
+    align-items: center;
+    flex-direction: column;
 }
 
-
-.scores{
-display: flex;
-width: 100%;
-height: 100px;
-justify-content: space-around;
-color: #cc99ff;
-
-
+#last {
+    border: none;
 }
 
+.scores {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-around;
+    color: #cc99ff;
+}
 
-#reset{
+#reset {
     height: 75px;
     width: 150px;
     margin: 50px;
     font-weight: 800;
     font-size: 18px;
     background-color: orange;
-
-
 }
 
-
-.game{
+.game {
     width: 85%;
     height: 85%;
 }
 
-.c{
-display: flex;
-justify-content: space-around;
-width: 100%;
+.c {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
-.main2{
+.main2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-flex-direction: column;
-height: 800px;
+    flex-direction: column;
+    height: 800px;
 }
 
-.icon{
-height: 100px;
-width: 100px;
-margin: 5px;
+.icon {
+    height: 100px;
+    width: 100px;
+    margin: 5px;
 }
 
-.icons{
-display: flex;
-justify-content: space-around;
-background-color: rgba(153, 153, 153, 0.6);
-border: 4px solid yellow;
-height: 400px;
-
-}
-
-.buttons{
+.icons {
     display: flex;
-    width: 100%;  
-    height : 300px;
+    justify-content: space-around;
+    background-color: rgba(153, 153, 153, 0.6);
+    border: 4px solid yellow;
+    height: 400px;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    height: 300px;
     justify-content: center;
     align-items: flex-start;
-
-
 }
 
-#startButton{
-
-
-    width: 200px; 
+#startButton {
+    width: 200px;
     height: 50px;
     font-weight: 800;
     font-size: 20px;
-    
-
 }
 
-#restartButton{
-
+#restartButton {
     height: 60px;
     width: 150px;
     margin: 50px;
     font-weight: 800;
     font-size: 20px;
     background-color: orange;
-
 }
 
-.mainSection{
+.mainSection {
     display: flex;
     background-image: url(../images/grid.jpeg);
     background-position: center;
@@ -174,47 +152,31 @@ height: 400px;
     height: 350px;
     flex-direction: column;
     align-items: center;
-
 }
 
-.oIco:hover{
-
-border-radius: 50%;
-box-shadow: 0 0 40px 10px red;
-
-
+.oIco:hover {
+    border-radius: 50%;
+    background-image: radial-gradient(circle, rgb(165, 48, 28) 0%, rgb(213, 81, 41) 30%, rgb(205, 9, 9) 70%);
 }
 
+.xIco:hover {
+    /* border : 2px solid blue; */
+    border-radius: 30px;
+    background-image: radial-gradient(circle, rgb(49, 144, 228) 0%, rgb(41, 122, 204) 30%, rgb(29, 84, 166) 70%);
+}
 
-.xIco:hover{
-
-    border : 2px solid blue;
+.xChosen {
+    /* border : 2px solid blue; */
     border-radius: 30px;
     box-shadow: 0 0 40px 10px blue;
-    
-    
-    }
+    background-image: radial-gradient(circle, rgb(49, 144, 228) 0%, rgb(41, 122, 204) 30%, rgb(29, 84, 166) 70%);
+}
 
+.oChosen {
+    border-radius: 50%;
+    box-shadow: 0 0 40px 10px red;
+}
 
-    .xChosen{
-
-        border : 2px solid blue;
-        border-radius: 30px;
-        box-shadow: 0 0 40px 10px blue;
-        
-        
-        }
-
-
-        .oChosen{
-
-            border-radius: 50%;
-            box-shadow: 0 0 40px 10px red;
-            
-            
-            }
-
-            #winner{
-font-size: 30px;
-
-            }
+#winner {
+    font-size: 30px;
+}

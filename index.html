@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,54 +8,74 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Tic Tac Toe Game</title>
 </head>
+
 <body>
-    <audio src="sounds/Star Wars Theme.mp3" loop=true autoplay="true" > </audio>
-   
-        <div class="main">
- <div>
-        <img src="images/Star_Wars_Yellow_Logo.svg.png" alt="" style="width: 600px; height: 200px">
-    </div>
-            <div class="scores">
+    <audio src="sounds/Star Wars Theme.mp3" loop=true autoplay="true"> </audio>
 
-                <h1 id="X">Player X's Score: 0</h1>
-                <h2 id="winner"></h2>
-                <h1 id="O">Player O's Score: 0</h1>
-
-            </div>
-            
-            <div class="mainSection">
-                
-                <div class="row">
-                    <div class="column" id = '0,0'> <h1></h1> </div>
-                    <div class="column" id = '0,1'><h1></h1></div>
-                    <div class="column" id = '0,2'><h1></h1></div>
-                </div>
-                <div class="row"> 
-                    
-                    <div class="column" id = '1,0'><h1></h1></div>
-                    <div class="column" id = '1,1'><h1></h1></div>
-                    <div class="column" id = '1,2'><h1></h1></div>
-                    
-                </div>
-                <div class="row" id="last">
-                    <div class="column" id = '2,0'><h1></h1></div>
-                    <div class="column" id = '2,1'><h1></h1></div>
-                    <div class="column" id = '2,2'><h1></h1></div>
-                    
-                </div>
-                
-                
-                
-            </div>
-            <div style="display: flex">
-            <button id="reset">Start Another Round</button>
-            
-            <button id="restartButton"> <a href="icons.html" style="color: black;text-decoration: none;">Restart Game</a> </button> 
-            </div>
+    <div class="main">
+        <div>
+            <img src="images/Star_Wars_Yellow_Logo.svg.png" alt="" style="width: 600px; height: 200px">
         </div>
-        
+        <div class="scores">
 
-        <script src="app.js"></script>
-        <script src="app2.js"></script>
-        </body>
-        </html>
+            <h1 id="X">Player X's Score: 0</h1>
+            <h2 id="winner"></h2>
+            <h1 id="O">Player O's Score: 0</h1>
+
+        </div>
+
+        <div class="mainSection">
+
+            <div class="row">
+                <div class="column" id='0,0'>
+                    <h1></h1>
+                </div>
+                <div class="column" id='0,1'>
+                    <h1></h1>
+                </div>
+                <div class="column" id='0,2'>
+                    <h1></h1>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="column" id='1,0'>
+                    <h1></h1>
+                </div>
+                <div class="column" id='1,1'>
+                    <h1></h1>
+                </div>
+                <div class="column" id='1,2'>
+                    <h1></h1>
+                </div>
+
+            </div>
+            <div class="row" id="last">
+                <div class="column" id='2,0'>
+                    <h1></h1>
+                </div>
+                <div class="column" id='2,1'>
+                    <h1></h1>
+                </div>
+                <div class="column" id='2,2'>
+                    <h1></h1>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <div style="display: flex">
+            <button id="reset">Start Another Round</button>
+
+            <button id="restartButton"> <a href="icons.html" style="color: black;text-decoration: none;">Restart Game</a> </button>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+    <script src="app2.js"></script>
+</body>
+
+</html>
