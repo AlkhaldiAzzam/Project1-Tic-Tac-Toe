@@ -30,6 +30,11 @@ button {
     border-color: orange;
     border-radius: 7px;
     background-color: orange;
+    border-radius: 30px;
+}
+
+button:hover {
+    box-shadow: 0 0 40px 10px orange;
 }
 
 body {
@@ -90,7 +95,7 @@ body {
     height: 85%;
 }
 
-.c {
+.container {
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -156,13 +161,14 @@ body {
 
 .oIco:hover {
     border-radius: 50%;
-    background-image: radial-gradient(circle, rgb(165, 48, 28) 0%, rgb(213, 81, 41) 30%, rgb(205, 9, 9) 70%);
+    box-shadow: 0 0 40px 10px red;
 }
 
 .xIco:hover {
     /* border : 2px solid blue; */
     border-radius: 30px;
-    background-image: radial-gradient(circle, rgb(49, 144, 228) 0%, rgb(41, 122, 204) 30%, rgb(29, 84, 166) 70%);
+    box-shadow: 0 0 40px 10px blue;
+    /* background-image: radial-gradient(circle, rgb(49, 144, 228) 0%, rgb(41, 122, 204) 30%, rgb(29, 84, 166) 70%); */
 }
 
 .xChosen {
@@ -179,4 +185,28 @@ body {
 
 #winner {
     font-size: 30px;
+}
+
+.button {
+    border-color: orange;
+    background-color: orange;
+    border-radius: 30px;
+    width: 175px;
+    height: 50px;
+    font-family: 'StarJedi', arial;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffe81f;
+    font-size: 21px;
+    margin: 10px;
+}
+
+.button:hover {
+    box-shadow: 0 0 40px 10px orange;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
