@@ -11,7 +11,7 @@ let ended = false;
 
 let ai = false;
 
-
+//storing the icon chosed in the local storage
 let xIcon = window.localStorage.getItem('x'),
     oIcon = window.localStorage.getItem('o');
 
@@ -19,19 +19,20 @@ let xIcon = window.localStorage.getItem('x'),
 const hit = new Audio('sounds/LSwall01.mp3');
 
 
-
+//gathering all the boxes in an array
 const block = document.querySelectorAll('.column');
 
 let totalScore = 0;
 
-window.localStorage.setItem('xScore', 0);
+// window.localStorage.setItem('xScore', 0);
 
-window.localStorage.setItem('oScore', 0);
+// window.localStorage.setItem('oScore', 0);
 
 let xScore = 0,
     oScore = 0;
 
 let winner;
+//this function is for checking the winning conditions
 const checkWinner = function() {
 
 
@@ -55,13 +56,15 @@ const checkWinner = function() {
         winner = 'o';
     }
 
+    //these are the winning conditions..
     for (let i = 0; i < 3; i++) {
-
+        // it will check each row and column through the loop
         (board[i][0] === board[i][1] && board[i][0] == board[i][2] && board[i][0] != '') ? (turn == false ? xHasWon() : oHasWon()) : '';
 
         (board[0][i] === board[1][i] && board[0][i] == board[2][i] && board[0][i] != '') ? (turn == false ? xHasWon() : oHasWon()) : '';
 
     }
+    // then the diagonal conditions manually
     (board[0][0] === board[1][1] && board[0][0] == board[2][2] && board[0][0] != '') ? (turn == false ? xHasWon() : oHasWon()) : '';
 
     (board[0][2] === board[1][1] && board[0][2] == board[2][0] && board[0][2] != '') ? (turn == false ? xHasWon() : oHasWon()) : '';
@@ -71,6 +74,7 @@ const checkWinner = function() {
 
 
 const tic = function() {
+    //aquiring the id of the box then converting it to integers to be used with the 2d array
     let id = this.id;
 
     const idArr = id.split('-');
@@ -91,25 +95,43 @@ const tic = function() {
 
         board[ind1][ind2] = 'O';
     }
+    //audio for the tics
     hit.play();
+
+    //this is an overly complicated way to display whos player's turn is it
+    if (turn == true && ai == false)
+        document.querySelector('#winner').innerText = "it's X's Turn";
+    else if (!turn && ai == false)
+        document.querySelector('#winner').innerText = "it's O's Turn";
+
+    else
+        document.querySelector('#winner').innerText = "You Are Playing Against the AI";
+
+    // it will first check if the current player has won or not, then switch the players
     checkWinner();
+    turn = !turn;
     totalScore++;
+    //remove the event listiner to disable the box from re-ticking it 
     this.removeEventListener('click', tic);
 
-    turn = !turn;
+
+
+
+    // check if it ended in a draw
     if (totalScore == 9 && winner == '') {
         document.querySelector('#winner').innerText = 'Its a DRAW!';
         ended = true;
 
     }
 
-
+    // when the game ends, removes all eventListiners..
     if (ended == true)
         block.forEach(element => {
             element.removeEventListener('click', tic);
         });
 
 
+    //  this is the dumb AI condition, to check weather its on or off..
     if (ai == true) {
         scan();
         randomTic();
@@ -128,6 +150,8 @@ const tic = function() {
 
 
 
+// this the main function to reset and initialize the board..
+//it will also reset all the important variables..
 const makeBoard = function() {
 
     block.forEach(element => {
@@ -150,17 +174,18 @@ const makeBoard = function() {
     totalScore = 0;
     winner = '';
 
-    document.querySelector('#winner').innerText = '';
+    //it will be initially X's turn, soo..why not?
+    document.querySelector('#winner').innerText = "it's X's Turn";
 }
 
 document.querySelector('#reset').addEventListener('click', makeBoard);
 
+//initialize the board at refresh..
 makeBoard();
 
-let scannedBoard = [];
 
 
-//smart ai algorythm, will go back to it later
+//smart ai algorythm, will go back to it later...i think
 
 
 // const yourTurn = function() {
@@ -250,7 +275,8 @@ let scannedBoard = [];
 // }
 
 
-
+//initialized here just in case...
+let scannedBoard = [];
 
 const randomTic = function() {
 
@@ -259,7 +285,6 @@ const randomTic = function() {
         return Math.random() - 0.5;
     })
 
-    // debugger;
     document.querySelector(`#a-${scannedBoard[0]}`).innerHTML = `<img src= "${oIcon}" class="game">`;
 
     const idArr = scannedBoard[0].split('-');
@@ -271,7 +296,7 @@ const randomTic = function() {
     board[ind1][ind2] = 'O';
 
     document.querySelector(`#a-${scannedBoard[0]}`).removeEventListener('click', tic);
-
+    //checks if it hasnt already ended to see if it won..
     if (!ended)
         checkWinner();
 
@@ -286,7 +311,7 @@ const randomTic = function() {
 }
 
 let index = 0;
-
+//the function that scans the "board" array..
 const scan = function() {
     scannedBoard = [];
     for (let i = 0; i < 3; i++) {
@@ -300,12 +325,11 @@ const scan = function() {
         }
 
     }
-    // debugger;
-    // console.log('bye');
+
     return scannedBoard;
 }
 
-
+//a function to highlight the 'Activate AI' button..
 const highlight = function() {
 
     ai = !ai;
