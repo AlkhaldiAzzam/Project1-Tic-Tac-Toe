@@ -4,7 +4,10 @@
 No need.
 
 ## Links:
-- wireframe.
+- Wireframe:
+![](images/wireframe.jpeg)
+
+
 - [Game link](https://alkhaldiazzam.github.io/Project1-Tic-Tac-Toe/index.html?).
 
 
